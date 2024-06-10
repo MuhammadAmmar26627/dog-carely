@@ -1,0 +1,39 @@
+{
+  "name": "004",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass sass/main.scss:css/main.css sass/postSCSS.scss:css/post.css sass/listingSCSS.scss:css/listing.css sass/404SCSS.scss:css/404.css --watch  --style=compressed  --no-charset",
+    "compile": "sass sass/main.scss:css/main.css sass/postSCSS.scss:css/post.css  --style=compressed  --no-charset",
+    "minifyJS": "grunt watch --force",
+    "postCompile": "sass sass/headerImp.scss css/header.css",
+    "prefix-css": "postcss css/main.css --use autoprefixer --output css/style.prefix.css",
+    "compress-css": "sass css/main.css css/main.css --output-style compressed",
+    "compress-header": "sass css/header.css css/header.css --output-style compressed",
+    "build-css": "npm-run-all prefix-css compress-css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "debug": ">=2.6.9",
+    "grunt": "^1.4.0",
+    "grunt-contrib-htmlmin": "^3.1.0",
+    "grunt-contrib-uglify": "^5.0.1",
+    "grunt-contrib-uglify-es": "github:gruntjs/grunt-contrib-uglify#harmony",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-minjson": "^0.4.0",
+    "js-yaml": ">=3.13.1",
+    "lodash": ">=4.17.19",
+    "minimatch": ">=3.0.2",
+    "qs": ">=6.0.4",
+    "sass": "1.30.0",
+    "sitemaps": "^1.0.0",
+    "uglify-js": ">=2.6.0",
+    "underscore.string": ">=3.3.5"
+  },
+  "dependencies": {
+    "grunt-json-minify": "^1.1.0",
+    "uglify-es": "^3.3.9"
+  }
+}
